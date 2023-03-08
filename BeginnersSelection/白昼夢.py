@@ -1,33 +1,25 @@
 s = input()
 t = ''
-
 flg = 0
-cnt = len(s)
+tmp = ''
 
 while (flg == 0):
   for word in ["dream", "dreamer", "erase", "eraser"]:
-    tmp_t = t
+    tmp = t
     t = word + t
-    # print (t)
-    if (t == s):
+    if (s == t):
       print ("YES")
       exit()
-    tmp_cnt = cnt
-    i = 0
-    # for i in range(len(word)):
-    while (i < len(word)):
-      # print (len(s) - 1 - cnt - i, cnt, s[len(s) - 1 - cnt - i], word[len(word) - 1 - i])
-      if (s[len(s) - 1 - cnt - i] != word[len(word) - 1 - i]):
-        t = tmp_t
-        # print ("========")
+    n = 0
+    for i in range(len(word)):
+      if (-1 * (-1 - i - len(tmp)) > len(s)):
         break
-      i += 1
-    if (t != tmp_t):
-      # print (t)
+      if (word[-1 - i] == s[-1 - i - len(tmp)]):
+        n += 1
+    if (n == len(word)):
       break
-  if (t == tmp_t):
-    flg = -1
-  else:
-    cnt += (len(t) - 2)
-
+    elif (word == "eraser"):
+      flg = -1
+    else:
+      t = tmp
 print ("NO")
