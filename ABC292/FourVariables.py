@@ -1,12 +1,8 @@
 n = int(input())
 cnt = 0
-mid = 0
-tmp = 0
 
 for ab in range(n):
   cd = n - ab
-  if (ab == cd):
-    tmp = cnt
   if (ab > 0 and cd > 0):
     ab_cnt = 0
     cd_cnt = 0
@@ -25,8 +21,5 @@ for ab in range(n):
           cd_cnt += 1
       c += 1
     cnt += (ab_cnt * cd_cnt)
-  if (ab == cd):
-    mid = cnt - tmp
-    break
 
-print (tmp * 2 + mid)
+print (cnt)
