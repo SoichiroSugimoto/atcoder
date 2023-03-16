@@ -15,4 +15,5 @@ for num in range(n + 1):
       i += 1
 
 print (len(x))
-print (x)
+x = map(str, x)
+print (' '.join(x))
