@@ -1,19 +1,18 @@
 n = int(input())
-a = sorted(set(list(map(int, input().split()))))
+a = list(map(int, input().split()))
 
-x = []
-i = 0
-
-print (a)
-length = len(a)
+b = []
+called = []
 
 for num in range(n + 1):
   if (num > 0):
-    if (a[i] != num):
-      x.append(num)
-    elif (length > i + 1):
-      i += 1
+    b.append(int(num))
+    jg = int(num) in called
+    if (jg == False):
+      called.append(int(a[num - 1]))
+    num += 1
 
+x = set(b) ^ set(called)
 print (len(x))
 x = map(str, x)
 print (' '.join(x))
