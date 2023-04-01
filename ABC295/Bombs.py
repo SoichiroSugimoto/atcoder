@@ -1,15 +1,18 @@
 rc = list(input().split())
-grid = [input() for i in range(int(rc[0]))]
+grid = [list(input()) for i in range(int(rc[0]))]
+r = int(rc[0])
+c = int(rc[1])
 
-i = 0
-for g in grid:
-  j = 0
-  for c in g:
-    if (['0123456789'].find(c)):
-      power = int(c)
-      j += 1
-      tmp_i = i
-      tmp_j = j
-      if (abs(i) + abs(j) < c)
-  i += 1
-    print(c)
+for i in range(r):
+  for j in range(c):
+    if ('0123456789'.find(grid[i][j]) > -1):
+      power = int(grid[i][j])
+      grid[i][j] = '.'
+      for ni in range(r):
+        for nj in range(c):
+          if (abs(ni - i) + abs(nj - j) <= power and grid[ni][nj] == '#'):
+            grid[ni][nj] = '.'
+
+for R in grid:
+  line = ''.join(R)
+  print(line)
