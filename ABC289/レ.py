@@ -7,5 +7,22 @@ print(NM)
 print(a)
 print(p)
 
-for i in range(NM[0] + 1):
-  if (p[i] == a[i]):
+# for r in a:
+#   tmp = p[r - 1]
+#   p[r - 1] = p[r]
+#   p[r] = tmp
+#   print(r, p)
+
+flg = 0
+ans = []
+
+for r in a:
+  if (flg == 0):
+    rsv = {}
+  else:
+    rsv.append(p[r - 1])
+    rsv.append(p[r])
+  
+
+
+print(p)
