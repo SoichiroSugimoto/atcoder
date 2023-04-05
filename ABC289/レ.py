@@ -15,14 +15,23 @@ print(p)
 
 flg = 0
 ans = []
+tmp = a[0]
 
-for r in a:
-  if (flg == 0):
-    rsv = {}
-  else:
+for i in range(len(a)):
+  r = a[i]
+  rsv = []
+  print("----- ", r, tmp)
+  while (r == tmp + 1 and i < len(a)):
+    r = a[i]
+    print(r, tmp, tmp + 1)
     rsv.append(p[r - 1])
     rsv.append(p[r])
-  
+    i += 1
+    print(rsv)
+    tmp = r
+  tmp = r
+  rsv.reverse()
+  print(rsv)
+  ans.append(rsv)
 
-
-print(p)
+print(ans)
